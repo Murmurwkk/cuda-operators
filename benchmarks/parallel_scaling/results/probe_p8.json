@@ -1,0 +1,45 @@
+{
+  "model": "ParScale-0.7B-P8-Pile",
+  "params": 681475208,
+  "streams": {
+    "n_streams": 8,
+    "tokens": 204,
+    "nll_per_stream": [
+      5.7555036544799805,
+      4.9628753662109375,
+      4.181610584259033,
+      4.875596046447754,
+      6.622142791748047,
+      4.861111640930176,
+      5.623995780944824,
+      4.049052715301514
+    ],
+    "nll_mean": 5.116486072540283,
+    "nll_std": 0.8529914021492004,
+    "nll_uniform_weights": 3.343362808227539,
+    "nll_best_stream": 4.049052715301514,
+    "top1_agreement_vs_mean": {
+      "pairwise_top1_agreement": 0.22994369787297078,
+      "pairwise_top1_agreement_min": 0.04926108196377754,
+      "pairwise_top1_agreement_max": 0.5369458198547363,
+      "agg_top1_agreement": 0.3300492465496063
+    },
+    "pairwise_cosine_mean": 0.5669617402766433,
+    "pairwise_cosine_min": 0.19616536796092987,
+    "pairwise_cosine_max": 0.8922462463378906,
+    "weight_mean_per_stream": [
+      0.11185277998447418,
+      0.12523074448108673,
+      0.12160498648881912,
+      0.11678214371204376,
+      0.14426906406879425,
+      0.13226787745952606,
+      0.13419760763645172,
+      0.11379479616880417
+    ],
+    "weight_entropy": 2.026047945022583,
+    "weight_max_mean": 0.1900460422039032,
+    "agg_logits_self_nll": 3.3125
+  },
+  "metadata_redaction": "Local absolute model path replaced by checkpoint basename; all numerical measurements unchanged."
+}

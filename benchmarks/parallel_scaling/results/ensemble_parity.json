@@ -1,0 +1,10 @@
+{
+  "cpu_structure_pass": true,
+  "subsets": 255,
+  "gpu_structure_pass": true,
+  "max_subset_nll_delta": 0.007165202953545613,
+  "gate_nll_delta": 0.001573440476591248,
+  "oracle_nll_delta": 0.0029044221774698897,
+  "absolute_tolerance_nats": 0.02,
+  "cpu_gpu_pass": true
+}

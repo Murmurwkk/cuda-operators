@@ -91,6 +91,8 @@ void selective_scan_warp_shared_kernel(const float *__restrict__ u,
   for (int n = lane; n < d_state; n += WARP_THREADS) {
     h[n] = 0.0f;
   }
+  // Initialization and float4 ownership differ across lanes.
+  __syncwarp();
 
   const float *a_row = A + d * d_state;
   const float skip_d = skip[d];
@@ -233,6 +235,8 @@ void selective_scan_warp_global_kernel(const float *__restrict__ u,
   for (int n = lane; n < d_state; n += WARP_THREADS) {
     h[n] = 0.0f;
   }
+  // Initialization and float4 ownership differ across lanes.
+  __syncwarp();
 
   const float *a_row = A + d * d_state;
   const float skip_d = skip[d];

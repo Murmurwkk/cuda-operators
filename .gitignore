@@ -1,0 +1,11 @@
+build/
+out/
+__pycache__/
+.venv*/
+*.pyc
+*.exe
+*.obj
+*.o
+*.ncu-rep
+*.nsys-rep
+*.sqlite

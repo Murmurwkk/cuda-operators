@@ -1,0 +1,7 @@
+{
+  "restricted_sanitizer_launch": {
+    "returncode": 13,
+    "message": "COMPUTE-SANITIZER: Error launching target app.",
+    "resolution": "Retried with required process-instrumentation permission; all 12 fixed-kernel cases passed."
+  }
+}

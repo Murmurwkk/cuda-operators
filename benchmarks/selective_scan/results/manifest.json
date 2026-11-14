@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "arch": "sm_120",
+  "flags": [
+    "-std=c++17",
+    "-O3",
+    "-lineinfo",
+    "-arch=sm_120",
+    "-allow-unsupported-compiler",
+    "-D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH",
+    "-Xcompiler",
+    "/O2"
+  ],
+  "nvcc_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Tue_Dec_16_19:27:18_Pacific_Standard_Time_2025\nCuda compilation tools, release 13.1, V13.1.115\nBuild cuda_13.1.r13.1/compiler.37061995_0\n",
+  "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU, 8151 MiB, 610.88",
+  "protocol": {
+    "oracle": "FP64 recurrence, twice before timing",
+    "atol": 2e-05,
+    "rtol": 0.0002,
+    "seed": 17,
+    "warmup": 6,
+    "iterations": 30,
+    "rounds": 3
+  },
+  "variants": {
+    "ssm": {
+      "source": "ssm.cu",
+      "source_sha256": "35661be61592c74c57cbc0cb31698f7fd0297a368e39f79685c262d6f6ca0434",
+      "harness_sha256": "cd1991d1e44a2c7f66cd86640d9b98e0074dca3fe35fc83d4d6bcf86850532ae",
+      "binary_sha256": "08d977f7ee79ed7cde1e74d8dfcf398b38eae0b5c4f099976116010c3139c3a8",
+      "compile": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 -I $ROOT\\op_mur -c $ROOT\\op_mur\\ssm.cu -o $ROOT\\bench_mur\\selective_scan\\build\\ssm.obj",
+      "link": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 $ROOT\\bench_mur\\selective_scan\\bench.cpp $ROOT\\bench_mur\\selective_scan\\build\\ssm.obj -o $ROOT\\bench_mur\\selective_scan\\build\\ssm.exe"
+    },
+    "seq": {
+      "source": "ssm_seq.cu",
+      "source_sha256": "3e03c51390bd6ce6d2583a988169ea8f4432f6d677e10f91e17d3ecf3ae14a0d",
+      "harness_sha256": "cd1991d1e44a2c7f66cd86640d9b98e0074dca3fe35fc83d4d6bcf86850532ae",
+      "binary_sha256": "d19e288bab18dd074c1fd079d8e000e72dd979157d58815fc22b1d8bb78dee2d",
+      "compile": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 -I $ROOT\\op_mur -c $ROOT\\op_mur\\ssm_seq.cu -o $ROOT\\bench_mur\\selective_scan\\build\\seq.obj",
+      "link": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 $ROOT\\bench_mur\\selective_scan\\bench.cpp $ROOT\\bench_mur\\selective_scan\\build\\seq.obj -o $ROOT\\bench_mur\\selective_scan\\build\\seq.exe"
+    },
+    "rewrite": {
+      "source": "selective_scan_rewrite.cu",
+      "source_sha256": "b1a950fac383810dbd65ba324a26c55e9a8e5bab4aec19ac17ee46489a38c020",
+      "harness_sha256": "cd1991d1e44a2c7f66cd86640d9b98e0074dca3fe35fc83d4d6bcf86850532ae",
+      "binary_sha256": "b78cbcc8ec5fdc19e9401a6e469e672831514b57c73b30766036fe06549b1cac",
+      "compile": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 -I $ROOT\\op_mur -c $ROOT\\op_mur\\selective_scan_rewrite.cu -o $ROOT\\bench_mur\\selective_scan\\build\\rewrite.obj",
+      "link": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 $ROOT\\bench_mur\\selective_scan\\bench.cpp $ROOT\\bench_mur\\selective_scan\\build\\rewrite.obj -o $ROOT\\bench_mur\\selective_scan\\build\\rewrite.exe"
+    },
+    "improved": {
+      "source": "selective_scan_improved.cu",
+      "source_sha256": "f9b372f0efc7a27a554f0cbe1d19b9ff3a1e20694a2a815a4480156cf002d1e5",
+      "harness_sha256": "cd1991d1e44a2c7f66cd86640d9b98e0074dca3fe35fc83d4d6bcf86850532ae",
+      "binary_sha256": "1d877dee5a53fe0920076857543378f73b2c1a6c03b177ce7c1997d348a56fe2",
+      "compile": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 -I $ROOT\\op_mur -c $ROOT\\op_mur\\selective_scan_improved.cu -o $ROOT\\bench_mur\\selective_scan\\build\\improved.obj",
+      "link": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 $ROOT\\bench_mur\\selective_scan\\bench.cpp $ROOT\\bench_mur\\selective_scan\\build\\improved.obj -o $ROOT\\bench_mur\\selective_scan\\build\\improved.exe"
+    },
+    "seq_parallel": {
+      "source": "selective_scan_seq_parallel.cu",
+      "source_sha256": "ad2e0a308b5307905e8dfc5ec9ffe069ccf256505071fb0eaa2f805534ae4c87",
+      "harness_sha256": "cd1991d1e44a2c7f66cd86640d9b98e0074dca3fe35fc83d4d6bcf86850532ae",
+      "binary_sha256": "839a55fb3f04111ec43c96c1829f6555e62a66af03147d9d7f26a22a9988e5b1",
+      "compile": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 -I $ROOT\\op_mur -c $ROOT\\op_mur\\selective_scan_seq_parallel.cu -o $ROOT\\bench_mur\\selective_scan\\build\\seq_parallel.obj",
+      "link": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 $ROOT\\bench_mur\\selective_scan\\bench.cpp $ROOT\\bench_mur\\selective_scan\\build\\seq_parallel.obj -o $ROOT\\bench_mur\\selective_scan\\build\\seq_parallel.exe"
+    },
+    "streaming_seq_parallel_fixed": {
+      "source": "selective_scan_streaming_seq_parallel_fixed.cu",
+      "source_sha256": "6c2aff8dfca407c6f3fb209d961a875abb8507a3f78045870283a7109e2168ef",
+      "harness_sha256": "cd1991d1e44a2c7f66cd86640d9b98e0074dca3fe35fc83d4d6bcf86850532ae",
+      "binary_sha256": "e4d2f140059201780d1bc32aacd8fd7451f1aed1048918e435a2f9d83f5b66fa",
+      "compile": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 -I $ROOT\\op_mur -c $ROOT\\op_mur\\selective_scan_streaming_seq_parallel_fixed.cu -o $ROOT\\bench_mur\\selective_scan\\build\\streaming_seq_parallel_fixed.obj",
+      "link": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 $ROOT\\bench_mur\\selective_scan\\bench.cpp $ROOT\\bench_mur\\selective_scan\\build\\streaming_seq_parallel_fixed.obj -o $ROOT\\bench_mur\\selective_scan\\build\\streaming_seq_parallel_fixed.exe"
+    },
+    "seq_workspace": {
+      "source": "seq_workspace.cu",
+      "source_sha256": "622dae5407f9ce7b46df2d2e04a5f8fe039d1214e972b05272f1b7293739e4c8",
+      "harness_sha256": "cd1991d1e44a2c7f66cd86640d9b98e0074dca3fe35fc83d4d6bcf86850532ae",
+      "binary_sha256": "50a580b09827e12666361fe8b3438b696f42151d38378c250a279eace2c354d3",
+      "compile": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 -I $ROOT\\op_mur -DUSE_WORKSPACE_ADAPTER -c $ROOT\\bench_mur\\selective_scan\\seq_workspace.cu -o $ROOT\\bench_mur\\selective_scan\\build\\seq_workspace.obj",
+      "link": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 -DUSE_WORKSPACE_ADAPTER $ROOT\\bench_mur\\selective_scan\\bench.cpp $ROOT\\bench_mur\\selective_scan\\build\\seq_workspace.obj -o $ROOT\\bench_mur\\selective_scan\\build\\seq_workspace.exe",
+      "included_source_sha256": "3e03c51390bd6ce6d2583a988169ea8f4432f6d677e10f91e17d3ecf3ae14a0d"
+    },
+    "improved_workspace": {
+      "source": "improved_workspace.cu",
+      "source_sha256": "66e03b2dcbf792285d6f2711020c1676568d2593683dd9577ff9d81896fa8862",
+      "harness_sha256": "cd1991d1e44a2c7f66cd86640d9b98e0074dca3fe35fc83d4d6bcf86850532ae",
+      "binary_sha256": "6b5f1b2d1abcf0e5b210a4e39c42f34945e430598b215f8c9535fc6aee0e8fe5",
+      "compile": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 -I $ROOT\\op_mur -DUSE_WORKSPACE_ADAPTER -c $ROOT\\bench_mur\\selective_scan\\improved_workspace.cu -o $ROOT\\bench_mur\\selective_scan\\build\\improved_workspace.obj",
+      "link": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 -DUSE_WORKSPACE_ADAPTER $ROOT\\bench_mur\\selective_scan\\bench.cpp $ROOT\\bench_mur\\selective_scan\\build\\improved_workspace.obj -o $ROOT\\bench_mur\\selective_scan\\build\\improved_workspace.exe",
+      "included_source_sha256": "f9b372f0efc7a27a554f0cbe1d19b9ff3a1e20694a2a815a4480156cf002d1e5"
+    },
+    "ssm_unsafe_history": {
+      "source": "ssm_before_sync.cu",
+      "source_sha256": "3f8ac004207fb0f104360b3ce053fe508b199e780dd6eae9897e780a6391e7b3",
+      "harness_sha256": "cd1991d1e44a2c7f66cd86640d9b98e0074dca3fe35fc83d4d6bcf86850532ae",
+      "binary_sha256": "70b00c526be7c21077f90ca0dd869f0ccbd8e7b3ad7de76cd18919225b22d1f7",
+      "compile": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 -I $ROOT\\op_mur -c $ROOT\\bench_mur\\selective_scan\\historical\\ssm_before_sync.cu -o $ROOT\\bench_mur\\selective_scan\\build\\ssm_unsafe_history.obj",
+      "link": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.1\\bin\\nvcc.exe -std=c++17 -O3 -lineinfo -arch=sm_120 -allow-unsupported-compiler -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH -Xcompiler /O2 $ROOT\\bench_mur\\selective_scan\\bench.cpp $ROOT\\bench_mur\\selective_scan\\build\\ssm_unsafe_history.obj -o $ROOT\\bench_mur\\selective_scan\\build\\ssm_unsafe_history.exe"
+    }
+  },
+  "msvc_versions": [
+    "14.51.36231",
+    "14.51.36248.0",
+    "19.51.36248",
+    "19.51.36248.0"
+  ],
+  "runner_sha256": "3e6446807abb24f700aff4a5ca7bb2c28002e52ef103928510c0758747a25725",
+  "script_sha256": {
+    "bench.cpp": "cd1991d1e44a2c7f66cd86640d9b98e0074dca3fe35fc83d4d6bcf86850532ae",
+    "run.py": "3e6446807abb24f700aff4a5ca7bb2c28002e52ef103928510c0758747a25725",
+    "profile.py": "0690210304e98ec0b016af367dbf1734156adfd9d331838144192ffb8d428a39",
+    "verify_results.py": "31a40e5248e58d71c56ed8782608a8eab3864f3d0ba1a9089b6e2a03a593c81d",
+    "plot_timings.py": "7eea47e5570ea35977ad9607ad4c120e40cc8b5f7a98e7108760fd075105cb74",
+    "seq_workspace.cu": "622dae5407f9ce7b46df2d2e04a5f8fe039d1214e972b05272f1b7293739e4c8",
+    "improved_workspace.cu": "66e03b2dcbf792285d6f2711020c1676568d2593683dd9577ff9d81896fa8862"
+  }
+}

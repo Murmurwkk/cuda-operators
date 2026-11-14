@@ -1,0 +1,129 @@
+{
+  "raw_row_counts": {
+    "matrix": 216,
+    "sync_comparison": 72,
+    "workspace": 36,
+    "chains": 252
+  },
+  "correctness_cases": 234,
+  "sanitizer_cases": 12,
+  "ssm_wins": 11,
+  "winners": [
+    {
+      "shape": [
+        1,
+        256,
+        64,
+        64
+      ],
+      "winner": "ssm"
+    },
+    {
+      "shape": [
+        1,
+        512,
+        64,
+        64
+      ],
+      "winner": "ssm"
+    },
+    {
+      "shape": [
+        1,
+        1024,
+        64,
+        32
+      ],
+      "winner": "improved"
+    },
+    {
+      "shape": [
+        1,
+        1024,
+        64,
+        64
+      ],
+      "winner": "ssm"
+    },
+    {
+      "shape": [
+        1,
+        1024,
+        64,
+        128
+      ],
+      "winner": "ssm"
+    },
+    {
+      "shape": [
+        1,
+        1024,
+        128,
+        64
+      ],
+      "winner": "ssm"
+    },
+    {
+      "shape": [
+        1,
+        1024,
+        256,
+        64
+      ],
+      "winner": "ssm"
+    },
+    {
+      "shape": [
+        1,
+        2048,
+        64,
+        64
+      ],
+      "winner": "ssm"
+    },
+    {
+      "shape": [
+        1,
+        4096,
+        64,
+        64
+      ],
+      "winner": "ssm"
+    },
+    {
+      "shape": [
+        1,
+        8192,
+        64,
+        64
+      ],
+      "winner": "ssm"
+    },
+    {
+      "shape": [
+        4,
+        1024,
+        64,
+        64
+      ],
+      "winner": "ssm"
+    },
+    {
+      "shape": [
+        8,
+        512,
+        64,
+        64
+      ],
+      "winner": "ssm"
+    }
+  ],
+  "largest_slowdown_relative_to_ssm": 24.854136607585296,
+  "matrix_max_abs_error": 3.06419029705e-07,
+  "figure_inputs_sha256": {
+    "matrix_summary.csv": "f8f20448a361e46babbd2c3e2868c6e51d034dec42b5b92fb291af5349df5de9",
+    "workspace_summary.csv": "f716e4f10887d4e391a646b97e47b1a3c2158c7e05e5487856394f56016e465c",
+    "chains_summary.csv": "fd86bce1a215c63b19489560236040e0bb0f328419d6805945d9838e361ec159"
+  },
+  "plot_source_sha256": "7eea47e5570ea35977ad9607ad4c120e40cc8b5f7a98e7108760fd075105cb74"
+}

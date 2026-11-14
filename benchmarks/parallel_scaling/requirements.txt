@@ -1,0 +1,10 @@
+# Install a CUDA-enabled PyTorch build appropriate for the GPU separately.
+# The exact versions used for measurements are stored in results/decode_p*.json.
+torch>=2.6
+transformers==4.51.3
+einops==0.8.2
+huggingface-hub>=0.30,<1
+numpy>=2.0
+scipy>=1.14
+matplotlib>=3.9
+safetensors>=0.5

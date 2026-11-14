@@ -1,0 +1,141 @@
+{
+  "diagnostic_only": true,
+  "nsys": [
+    {
+      "variant": "seq",
+      "shape": [
+        1,
+        2048,
+        64,
+        64
+      ],
+      "correctness_calls": 2,
+      "warmup": 1,
+      "timed_calls": 3,
+      "api_calls": {
+        "cuCtxSynchronize": 1,
+        "cuDeviceGetLuid": 1,
+        "cuKernelGetName": 24,
+        "cuLibraryGetKernel": 4,
+        "cuLibraryLoadData": 1,
+        "cuLibraryUnload": 1,
+        "cuModuleGetLoadingMode": 1,
+        "cudaDeviceSynchronize_v3020": 3,
+        "cudaEventCreate_v3020": 2,
+        "cudaEventDestroy_v3020": 2,
+        "cudaEventRecord_v3020": 2,
+        "cudaEventSynchronize_v3020": 1,
+        "cudaFree_v3020": 31,
+        "cudaLaunchKernel_v7000": 24,
+        "cudaMalloc_v3020": 31,
+        "cudaMemcpy_v3020": 8,
+        "cudaMemset_v3020": 2
+      }
+    },
+    {
+      "variant": "seq_workspace",
+      "shape": [
+        1,
+        2048,
+        64,
+        64
+      ],
+      "correctness_calls": 2,
+      "warmup": 1,
+      "timed_calls": 3,
+      "api_calls": {
+        "cuCtxSynchronize": 1,
+        "cuDeviceGetLuid": 1,
+        "cuKernelGetName": 24,
+        "cuLibraryGetKernel": 4,
+        "cuLibraryLoadData": 1,
+        "cuLibraryUnload": 1,
+        "cuModuleGetLoadingMode": 1,
+        "cudaDeviceSynchronize_v3020": 3,
+        "cudaEventCreate_v3020": 2,
+        "cudaEventDestroy_v3020": 2,
+        "cudaEventRecord_v3020": 2,
+        "cudaEventSynchronize_v3020": 1,
+        "cudaFree_v3020": 11,
+        "cudaLaunchKernel_v7000": 24,
+        "cudaMalloc_v3020": 11,
+        "cudaMemcpy_v3020": 8,
+        "cudaMemset_v3020": 2
+      }
+    },
+    {
+      "variant": "improved",
+      "shape": [
+        1,
+        2048,
+        64,
+        64
+      ],
+      "correctness_calls": 2,
+      "warmup": 1,
+      "timed_calls": 3,
+      "api_calls": {
+        "cuCtxSynchronize": 1,
+        "cuDeviceGetLuid": 1,
+        "cuKernelGetName": 24,
+        "cuLibraryGetKernel": 4,
+        "cuLibraryLoadData": 1,
+        "cuLibraryUnload": 1,
+        "cuModuleGetLoadingMode": 1,
+        "cudaDeviceSynchronize_v3020": 3,
+        "cudaEventCreate_v3020": 2,
+        "cudaEventDestroy_v3020": 2,
+        "cudaEventRecord_v3020": 2,
+        "cudaEventSynchronize_v3020": 1,
+        "cudaFreeAsync_v11020": 6,
+        "cudaFree_v3020": 7,
+        "cudaLaunchKernel_v7000": 24,
+        "cudaMallocAsync_v11020": 6,
+        "cudaMalloc_v3020": 7,
+        "cudaMemcpy_v3020": 8,
+        "cudaMemset_v3020": 2
+      }
+    },
+    {
+      "variant": "improved_workspace",
+      "shape": [
+        1,
+        2048,
+        64,
+        64
+      ],
+      "correctness_calls": 2,
+      "warmup": 1,
+      "timed_calls": 3,
+      "api_calls": {
+        "cuCtxSynchronize": 1,
+        "cuDeviceGetLuid": 1,
+        "cuKernelGetName": 24,
+        "cuLibraryGetKernel": 4,
+        "cuLibraryLoadData": 1,
+        "cuLibraryUnload": 1,
+        "cuModuleGetLoadingMode": 1,
+        "cudaDeviceSynchronize_v3020": 3,
+        "cudaEventCreate_v3020": 2,
+        "cudaEventDestroy_v3020": 2,
+        "cudaEventRecord_v3020": 2,
+        "cudaEventSynchronize_v3020": 1,
+        "cudaFree_v3020": 8,
+        "cudaLaunchKernel_v7000": 24,
+        "cudaMalloc_v3020": 8,
+        "cudaMemcpy_v3020": 8,
+        "cudaMemset_v3020": 2
+      }
+    }
+  ],
+  "unsafe_history_racecheck": {
+    "returncode": 9,
+    "summary": "RACECHECK SUMMARY: 100 hazards displayed (0 errors, 1736 warnings)",
+    "first_hazard_excerpt": "========= COMPUTE-SANITIZER\n========= Warning: (Warp Level Programming) Potential RAW hazard detected at __shared__ 0x404 in block (6,0,0) :\n=========     Write Thread (1,0,0) at <unnamed>::selective_scan_warp_shared_kernel(const float *, const float *, const float *, const float *, const float *, const float *, float *, int, int, int, int)+0x770 in ssm_before_sync.cu:94\n=========     Read Thread (0,0,0) at <unnamed>::selective_scan_warp_shared_kernel(const float *, const float *, const float *, const float *, const float *, const float *, float *, int, int, int, int)+0xc80 in ssm_before_sync.cu:119\n=========     Current Value : 0\n=========     Saved host backtrace up to driver entry point at kernel launch time\n=========         Host Frame: cuLaunchKernel [0x7ff9d393d9e8] in nvcuda64.dll\n=========         Host Frame:  [0xdc5e] in nvcudart_hybrid64.dll"
+  },
+  "ncu": {
+    "returncode": 1,
+    "counter_permission_denied": true,
+    "log": "==PROF== Connected to process 9640 ($ROOT\\bench_mur\\selective_scan\\build\\ssm.exe)\n==ERROR== ERR_NVGPUCTRPERM - The user does not have permission to access NVIDIA GPU Performance Counters on the target device 0. For instructions on enabling permissions and to get more information see https://developer.nvidia.com/ERR_NVGPUCTRPERM\n{\"B\":1,\"L\":1024,\"D\":64,\"N\":64,\"seed\":17,\"iters\":30,\"warmup\":6,\"ms\":0.000000000,\"wall_ms\":0.000000000,\"max_abs_error\":1.47029580316e-07,\"max_normalized_error\":0.0049672974304,\"atol\":0.00002,\"rtol\":0.0002,\"correct\":true,\"check_only\":true}\n==PROF== Disconnected from process 9640\n"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "model": "ParScale-0.7B-P1-Pile",
+  "params": 671948032,
+  "streams": {
+    "n_streams": 1,
+    "tokens": 204,
+    "agg_logits_self_nll": 3.375
+  },
+  "latency": {
+    "1": {
+      "ms_per_stream_step": 36.71836853027344,
+      "ms_per_batch_step": 36.71836853027344,
+      "peak_gb": 1.432195072
+    },
+    "2": {
+      "ms_per_stream_step": 18.38230323791504,
+      "ms_per_batch_step": 36.76460647583008,
+      "peak_gb": 1.47350272
+    },
+    "4": {
+      "ms_per_stream_step": 10.660221099853516,
+      "ms_per_batch_step": 42.64088439941406,
+      "peak_gb": 1.555963392
+    },
+    "8": {
+      "ms_per_stream_step": 5.100037097930908,
+      "ms_per_batch_step": 40.800296783447266,
+      "peak_gb": 1.722254848
+    }
+  },
+  "metadata_redaction": "Local absolute model path replaced by checkpoint basename; all numerical measurements unchanged."
+}

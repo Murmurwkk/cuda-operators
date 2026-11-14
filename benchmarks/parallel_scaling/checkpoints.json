@@ -1,0 +1,12 @@
+{
+  "ParScale-0.7B-P1-Pile": {
+    "repo_id": "ParScale/ParScale-0.7B-P1-Pile",
+    "revision": "881efa413e390400d5121468f259c6180073c721",
+    "weight_sha256": "0e6632e3e64c7125b67f0189d7c0d22d8fce73f1545c9ba37a3b683c0db7eeea"
+  },
+  "ParScale-0.7B-P8-Pile": {
+    "repo_id": "ParScale/ParScale-0.7B-P8-Pile",
+    "revision": "2cf8614c5ac7b0edab5912ed1d07aecc3b800f53",
+    "weight_sha256": "f0ff8a090b2f885b990be940f24a470208891368da8f0750b4eb198a78acab0a"
+  }
+}

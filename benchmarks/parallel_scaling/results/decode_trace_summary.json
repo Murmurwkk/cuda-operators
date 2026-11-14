@@ -1,0 +1,20 @@
+{
+  "model": "ParScale-0.7B-P1-Pile",
+  "batch": 1,
+  "prompt_tokens": 128,
+  "cached_decode_steps": 8,
+  "warmup_requests": 3,
+  "nsys": "2026.3.1",
+  "trace": "cuda,nvtx",
+  "sample": "none",
+  "capture_range": "cudaProfilerApi",
+  "report_sha256": "544dae73838b6b414b7df774f1b015da76fc8d4e2f59a740dc00b7f721ca603e",
+  "profile_script_sha256": "69f8a72940a48a33b8f9c80f7a80904ba4b1226afe3068daf820c66ca788091b",
+  "decode_script_sha256": "a33e28beccca7a4b7e6c6c21412410c9aca5fd31b86fe0c4eb89deabf9ea129e",
+  "marked_request_wall_ms": 404.632956,
+  "kernel_count": 14482,
+  "first_to_last_kernel_ms": 403.73851,
+  "kernel_interval_union_ms": 67.664955,
+  "kernel_interval_union_fraction": 0.16759598929515046,
+  "interpretation": "Trace-only: fraction of first-to-last-kernel span covered by kernel intervals; not SM utilization or DRAM utilization. Profiling timings do not replace independent benchmark results."
+}
